@@ -30,7 +30,10 @@ a
   padding-top: 80px
   box-sizing: border-box
   border-right: 1px solid rgb(230, 230, 230) !important
+  display: inline-block
+  vertical-align: top
   &-scroller
+    background: rgb(250, 250, 250)
     overflow-y: scroll
     height: 100%
   &-item
@@ -47,3 +50,36 @@ a
     background: white
     padding: 0 10px
     box-sizing: border-box
+    & span
+      font-size: 30px
+      line-height: 80px
+      margin-right: 80px
+
+
+.reply
+  position: relative
+  height: 100%
+  width: 50%
+  padding-top: 80px
+  box-sizing: border-box
+  display: inline-block
+  vertical-align: top
+  background: rgb(250, 250, 250)
+  &-toolbar
+    position: absolute
+    height: 80px
+    font-size: 30px
+    line-height: 80px
+    top: 0
+    left: 0
+    width: 100%
+    border-bottom: 1px solid rgb(230, 230, 230) !important
+    background: white
+    padding: 0 10px
+    box-sizing: border-box
+
+
+.replyForm
+  margin: 10px 10px
+  & > div
+    padding-top: 2px

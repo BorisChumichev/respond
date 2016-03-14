@@ -8,6 +8,7 @@ var app = express();
 
 var compress = require('compression');
 var layouts = require('express-ejs-layouts');
+var request = require('request');
 
 app.set('layout');
 app.set('view engine', 'ejs');
@@ -31,9 +32,14 @@ if (env.production) {
 }
 
 app.get('/api/inbox', function(req, res) {
-  fs.readFile('mocktweets.json', function(err, data) {
-    res.json(JSON.parse(data.toString()));
+  request('http://192.168.0.33:3000/api/1/tweets?token=CmzJFFLFdfCnOpwgS9wSycVWZq8Qvtd_UZolPd8oSJlD9WxkP0hwwA', function(err, result, body) {
+    if (err) return res.end();
+    res.json(JSON.parse(body));
   });
+});
+
+app.get('/api/accounts', function(req, res) {
+  res.json(require('./accounts.js'));
 });
 
 app.get('/*', function(req, res) {

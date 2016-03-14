@@ -17,13 +17,13 @@ export default {
 
   newest: tweets => R.reverse(R.sortBy(R.compose(toDate, R.prop('created_at')), tweets)),
 
-  mostFollowed: tweets => R.reverse(R.sortBy(R.compose(R.prop('followers_count'), R.prop('user')), tweets)),
+  mostFollowed: tweets => R.reverse(R.sortBy(R.compose(parseInt, R.prop('followers_count'), R.prop('user')), tweets)),
 
   inbox() {
     return new Promise((resolve, reject) => {
       $.get('/api/inbox').then(
-        ({result}) => {
-          resolve(result);
+        ({response}) => {
+          resolve(response);
         },
 
         err => {
