@@ -4,6 +4,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import { IndexRoute, Router, Route, browserHistory } from 'react-router';
 
+var injectTapEventPlugin = require('react-tap-event-plugin');
+injectTapEventPlugin();
+
 import App from 'components/App/App.jsx';
 import Inbox from 'components/Inbox/Inbox.jsx';
 import Conversations from 'components/Conversations/Conversations.jsx';

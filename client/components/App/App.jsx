@@ -11,12 +11,8 @@ import Divider from 'material-ui/lib/divider';
 
 const App = (props) => (
   <div>
-    <List className={'navigation'}>
-      <Link to={'/'}><ListItem primaryText="Inbox" leftIcon={<ContentInbox />} /></Link>
-      <Link to={'/conversations'}><ListItem primaryText="Conversations" leftIcon={<ActionGrade />} /></Link>
-    </List>
-    <div className={'content'}>
-    {props.children}
+    <div>
+      {props.children}
     </div>
   </div>
 );

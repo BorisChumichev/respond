@@ -30,6 +30,12 @@ if (env.production) {
   });
 }
 
+app.get('/api/inbox', function(req, res) {
+  fs.readFile('mocktweets.json', function(err, data) {
+    res.json(JSON.parse(data.toString()));
+  });
+});
+
 app.get('/*', function(req, res) {
   res.render('index', {
     env: env,
